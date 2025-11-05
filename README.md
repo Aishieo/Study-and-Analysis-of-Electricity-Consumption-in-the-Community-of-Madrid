@@ -335,10 +335,12 @@ python src/test_esios_data.py
 - Algunos datos pueden ser simulados si las APIs no están disponibles
 - Se marcan claramente en los datasets con columna `fuente`
 
-### Archivos CSV
+### Configuración de API Keys
 
-- Los archivos CSV generados no se versionan (ver `.gitignore`)
-- Se generan automáticamente en `data/processed/`
+- **Seguridad**: Las API keys deben configurarse como variables de entorno
+- **No hardcodeadas**: El código no incluye keys en el repositorio por seguridad
+- **Requerido**: ESIOS_API_KEY es necesario para recopilar datos de ESIOS
+- **Opcional**: OPENWEATHER_API_KEY es opcional para datos meteorológicos mejorados
 
 ## 🤝 Contribución
 
@@ -352,7 +354,7 @@ Las contribuciones son bienvenidas. Por favor:
 
 ## 📄 Licencia
 
-Este proyecto es parte de un Trabajo de Fin de Máster (TFM). Ver archivo LICENSE para más detalles.
+Este proyecto es parte de un Trabajo de Fin de Máster (TFM).
 
 ## 👤 Autor
 
@@ -361,12 +363,6 @@ Este proyecto es parte de un Trabajo de Fin de Máster (TFM). Ver archivo LICENS
 - GitHub: [@Aishieo](https://github.com/Aishieo)
 - Email: alesantana2512@gmail.com
 
-## 🙏 Agradecimientos
-
-- **INE**: Por proporcionar datos oficiales de forma abierta
-- **ESIOS/REE**: Por la API de datos energéticos
-- **Ayuntamiento de Madrid**: Por el portal de datos abiertos
-- **OpenWeatherMap**: Por la API meteorológica (opcional)
 
 ## 📚 Referencias
 
