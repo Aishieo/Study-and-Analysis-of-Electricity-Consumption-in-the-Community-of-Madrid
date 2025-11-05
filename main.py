@@ -27,40 +27,30 @@ logger = logging.getLogger(__name__)
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 # Importar los colectores
-try:
-    from air_quality_collector import AirQualityCollector
-    AIR_QUALITY_AVAILABLE = True
-except ImportError as e:
-    logger.warning(f"No se pudo importar air_quality_collector: {e}")
-    AIR_QUALITY_AVAILABLE = False
-
-try:
-    from mobility_data_collector import MobilityDataCollector
-    MOBILITY_AVAILABLE = True
-except ImportError as e:
-    logger.warning(f"No se pudo importar mobility_data_collector: {e}")
-    MOBILITY_AVAILABLE = False
-
-try:
-    from weather_data_collector import WeatherDataCollector
-    WEATHER_AVAILABLE = True
-except ImportError as e:
-    logger.warning(f"No se pudo importar weather_data_collector: {e}")
-    WEATHER_AVAILABLE = False
-
-try:
-    from electricity_prices_collector import ElectricityPricesCollector
-    ELECTRICITY_PRICES_AVAILABLE = True
-except ImportError as e:
-    logger.warning(f"No se pudo importar electricity_prices_collector: {e}")
-    ELECTRICITY_PRICES_AVAILABLE = False
-
+# Nota: Los colectores individuales (air_quality, mobility, weather, electricity_prices)
+# son usados internamente por data_integration, no se ejecutan directamente aquí
 try:
     from data_integration import DataIntegration
     DATA_INTEGRATION_AVAILABLE = True
 except ImportError as e:
     logger.warning(f"No se pudo importar data_integration: {e}")
     DATA_INTEGRATION_AVAILABLE = False
+
+try:
+    from ine_api import load_renta_media, load_indicadores_demograficos, load_nivel_educativo
+    from ine_api_electric import load_consumo_madrid_distritos
+    INE_AVAILABLE = True
+except ImportError as e:
+    logger.warning(f"No se pudo importar módulos INE: {e}")
+    INE_AVAILABLE = False
+
+try:
+    from esios_data_collector import ESIOSDataCollector
+    from config.settings import get_api_key
+    ESIOS_AVAILABLE = True
+except ImportError as e:
+    logger.warning(f"No se pudo importar módulos ESIOS: {e}")
+    ESIOS_AVAILABLE = False
 
 import os
 
@@ -73,187 +63,6 @@ class DataCollectionRunner:
         self.start_time = datetime.now()
         self.data_dir = Path(__file__).parent / "data" / "processed"
         self.data_dir.mkdir(parents=True, exist_ok=True)
-        
-    def run_air_quality_collection(self):
-        """Ejecutar recopilación de datos de calidad del aire"""
-        if not AIR_QUALITY_AVAILABLE:
-            logger.warning("⏭️  Colector de calidad del aire no disponible")
-            return False
-            
-        try:
-            logger.info("=" * 60)
-            logger.info("🌬️  INICIANDO RECOPILACIÓN DE CALIDAD DEL AIRE")
-            logger.info("=" * 60)
-            
-            collector = AirQualityCollector()
-            
-            # Obtener datos para todos los distritos
-            air_quality_df = collector.get_air_quality_all_districts(year=2022)
-            
-            if not air_quality_df.empty:
-                logger.info(f"✅ Datos obtenidos: {len(air_quality_df)} registros")
-                
-                # Calcular métricas
-                metrics_df = collector.calculate_air_quality_metrics(air_quality_df)
-                health_df = collector.get_health_impact_assessment(air_quality_df)
-                
-                # Guardar datos
-                collector.save_air_quality_data(air_quality_df, "air_quality_madrid.csv")
-                collector.save_air_quality_data(metrics_df, "air_quality_metrics_madrid.csv")
-                collector.save_air_quality_data(health_df, "air_quality_health_madrid.csv")
-                
-                self.results['air_quality'] = {
-                    'status': 'success',
-                    'records': len(air_quality_df),
-                    'districts': len(air_quality_df['distrito'].unique()) if 'distrito' in air_quality_df.columns else 0,
-                    'files': ['air_quality_madrid.csv', 'air_quality_metrics_madrid.csv', 'air_quality_health_madrid.csv']
-                }
-                return True
-            else:
-                logger.error("❌ No se obtuvieron datos de calidad del aire")
-                self.results['air_quality'] = {'status': 'failed', 'reason': 'No data obtained'}
-                return False
-                
-        except Exception as e:
-            logger.error(f"❌ Error en recopilación de calidad del aire: {str(e)}")
-            logger.debug(traceback.format_exc())
-            self.results['air_quality'] = {'status': 'error', 'error': str(e)}
-            return False
-    
-    def run_mobility_collection(self):
-        """Ejecutar recopilación de datos de movilidad"""
-        if not MOBILITY_AVAILABLE:
-            logger.warning("⏭️  Colector de movilidad no disponible")
-            return False
-            
-        try:
-            logger.info("=" * 60)
-            logger.info("🚇 INICIANDO RECOPILACIÓN DE MOVILIDAD")
-            logger.info("=" * 60)
-            
-            collector = MobilityDataCollector()
-            
-            # Obtener datos para todos los distritos
-            mobility_df = collector.get_mobility_data_all_districts()
-            
-            if not mobility_df.empty:
-                logger.info(f"✅ Datos obtenidos: {len(mobility_df)} registros")
-                
-                # Calcular métricas
-                metrics_df = collector.calculate_mobility_metrics(mobility_df)
-                connectivity_df = collector.get_connectivity_analysis(mobility_df)
-                
-                # Guardar datos
-                collector.save_mobility_data(mobility_df, "mobility_data_madrid.csv")
-                collector.save_mobility_data(metrics_df, "mobility_metrics_madrid.csv")
-                collector.save_mobility_data(connectivity_df, "mobility_connectivity_madrid.csv")
-                
-                self.results['mobility'] = {
-                    'status': 'success',
-                    'records': len(mobility_df),
-                    'files': ['mobility_data_madrid.csv', 'mobility_metrics_madrid.csv', 'mobility_connectivity_madrid.csv']
-                }
-                return True
-            else:
-                logger.error("❌ No se obtuvieron datos de movilidad")
-                self.results['mobility'] = {'status': 'failed', 'reason': 'No data obtained'}
-                return False
-                
-        except Exception as e:
-            logger.error(f"❌ Error en recopilación de movilidad: {str(e)}")
-            logger.debug(traceback.format_exc())
-            self.results['mobility'] = {'status': 'error', 'error': str(e)}
-            return False
-    
-    def run_weather_collection(self):
-        """Ejecutar recopilación de datos meteorológicos"""
-        if not WEATHER_AVAILABLE:
-            logger.warning("⏭️  Colector de datos meteorológicos no disponible")
-            return False
-            
-        try:
-            logger.info("=" * 60)
-            logger.info("🌤️  INICIANDO RECOPILACIÓN DE DATOS METEOROLÓGICOS")
-            logger.info("=" * 60)
-            
-            api_key = os.getenv('OPENWEATHER_API_KEY')
-            if not api_key:
-                logger.warning("⚠️  OPENWEATHER_API_KEY no configurada, se usará datos simulados")
-            
-            collector = WeatherDataCollector(api_key)
-            
-            # Obtener datos para todos los distritos
-            weather_df = collector.get_weather_data_all_districts(days_back=30)
-            
-            if not weather_df.empty:
-                logger.info(f"✅ Datos obtenidos: {len(weather_df)} registros")
-                
-                # Calcular métricas
-                metrics_df = collector.calculate_weather_metrics(weather_df)
-                
-                # Guardar datos
-                collector.save_weather_data(weather_df, "weather_data_madrid.csv")
-                collector.save_weather_data(metrics_df, "weather_metrics_madrid.csv")
-                
-                self.results['weather'] = {
-                    'status': 'success',
-                    'records': len(weather_df),
-                    'files': ['weather_data_madrid.csv', 'weather_metrics_madrid.csv']
-                }
-                return True
-            else:
-                logger.error("❌ No se obtuvieron datos meteorológicos")
-                self.results['weather'] = {'status': 'failed', 'reason': 'No data obtained'}
-                return False
-                
-        except Exception as e:
-            logger.error(f"❌ Error en recopilación de datos meteorológicos: {str(e)}")
-            logger.debug(traceback.format_exc())
-            self.results['weather'] = {'status': 'error', 'error': str(e)}
-            return False
-    
-    def run_electricity_prices_collection(self):
-        """Ejecutar recopilación de datos de precios de electricidad"""
-        if not ELECTRICITY_PRICES_AVAILABLE:
-            logger.warning("⏭️  Colector de precios de electricidad no disponible")
-            return False
-            
-        try:
-            logger.info("=" * 60)
-            logger.info("⚡ INICIANDO RECOPILACIÓN DE PRECIOS DE ELECTRICIDAD")
-            logger.info("=" * 60)
-            
-            collector = ElectricityPricesCollector()
-            
-            # Obtener precios históricos
-            prices_df = collector.get_historical_prices(days_back=30)
-            
-            if not prices_df.empty:
-                logger.info(f"✅ Datos obtenidos: {len(prices_df)} registros")
-                
-                # Calcular métricas
-                metrics_df = collector.calculate_price_metrics(prices_df)
-                
-                # Guardar datos
-                collector.save_price_data(prices_df, "electricity_prices_madrid.csv")
-                collector.save_price_data(metrics_df, "electricity_price_metrics_madrid.csv")
-                
-                self.results['electricity_prices'] = {
-                    'status': 'success',
-                    'records': len(prices_df),
-                    'files': ['electricity_prices_madrid.csv', 'electricity_price_metrics_madrid.csv']
-                }
-                return True
-            else:
-                logger.error("❌ No se obtuvieron datos de precios de electricidad")
-                self.results['electricity_prices'] = {'status': 'failed', 'reason': 'No data obtained'}
-                return False
-                
-        except Exception as e:
-            logger.error(f"❌ Error en recopilación de precios de electricidad: {str(e)}")
-            logger.debug(traceback.format_exc())
-            self.results['electricity_prices'] = {'status': 'error', 'error': str(e)}
-            return False
     
     def run_data_integration(self):
         """Ejecutar integración de datos"""
@@ -307,6 +116,153 @@ class DataCollectionRunner:
             self.results['data_integration'] = {'status': 'error', 'error': str(e)}
             return False
     
+    def run_ine_collection(self):
+        """Ejecutar recopilación de datos del INE (Instituto Nacional de Estadística)"""
+        if not INE_AVAILABLE:
+            logger.warning("⏭️  Colector de datos INE no disponible")
+            return False
+            
+        try:
+            logger.info("=" * 60)
+            logger.info("📊 INICIANDO RECOPILACIÓN DE DATOS DEL INE")
+            logger.info("=" * 60)
+            
+            files_generated = []
+            
+            # 1. Datos de consumo eléctrico por distritos (tabla 59532)
+            logger.info("⚡ Recopilando datos de consumo eléctrico del INE...")
+            try:
+                consumo_df = load_consumo_madrid_distritos(header_row=6, add_distrito_nombre=True)
+                if not consumo_df.empty:
+                    consumo_path = self.data_dir / "ine_consumo_electrico_madrid.csv"
+                    consumo_df.to_csv(consumo_path, index=False, encoding='utf-8')
+                    files_generated.append("ine_consumo_electrico_madrid.csv")
+                    logger.info(f"✅ Datos de consumo: {len(consumo_df)} registros")
+                else:
+                    logger.warning("⚠️ No se obtuvieron datos de consumo eléctrico")
+            except Exception as e:
+                logger.error(f"❌ Error obteniendo datos de consumo: {str(e)}")
+            
+            # 2. Datos de renta media por distrito (tabla 31097)
+            logger.info("💰 Recopilando datos de renta media del INE...")
+            try:
+                renta_df = load_renta_media()
+                if not renta_df.empty:
+                    renta_path = self.data_dir / "ine_renta_madrid.csv"
+                    renta_df.to_csv(renta_path, index=False, encoding='utf-8')
+                    files_generated.append("ine_renta_madrid.csv")
+                    logger.info(f"✅ Datos de renta: {len(renta_df)} registros")
+                else:
+                    logger.warning("⚠️ No se obtuvieron datos de renta")
+            except Exception as e:
+                logger.error(f"❌ Error obteniendo datos de renta: {str(e)}")
+            
+            # 3. Indicadores demográficos (tabla 31105)
+            logger.info("👥 Recopilando indicadores demográficos del INE...")
+            try:
+                demo_df = load_indicadores_demograficos()
+                if not demo_df.empty:
+                    demo_path = self.data_dir / "ine_demografia_madrid.csv"
+                    demo_df.to_csv(demo_path, index=False, encoding='utf-8')
+                    files_generated.append("ine_demografia_madrid.csv")
+                    logger.info(f"✅ Datos demográficos: {len(demo_df)} registros")
+                else:
+                    logger.warning("⚠️ No se obtuvieron datos demográficos")
+            except Exception as e:
+                logger.error(f"❌ Error obteniendo datos demográficos: {str(e)}")
+            
+            # 4. Nivel educativo (tabla 66753)
+            logger.info("📚 Recopilando datos de nivel educativo del INE...")
+            try:
+                educacion_df = load_nivel_educativo()
+                if not educacion_df.empty:
+                    educ_path = self.data_dir / "ine_educacion_madrid.csv"
+                    educacion_df.to_csv(educ_path, index=False, encoding='utf-8')
+                    files_generated.append("ine_educacion_madrid.csv")
+                    logger.info(f"✅ Datos de educación: {len(educacion_df)} registros")
+                else:
+                    logger.warning("⚠️ No se obtuvieron datos de educación")
+            except Exception as e:
+                logger.error(f"❌ Error obteniendo datos de educación: {str(e)}")
+            
+            if files_generated:
+                self.results['ine'] = {
+                    'status': 'success',
+                    'files': files_generated
+                }
+                return True
+            else:
+                logger.error("❌ No se obtuvieron datos del INE")
+                self.results['ine'] = {'status': 'failed', 'reason': 'No data obtained'}
+                return False
+                
+        except Exception as e:
+            logger.error(f"❌ Error en recopilación de datos INE: {str(e)}")
+            logger.debug(traceback.format_exc())
+            self.results['ine'] = {'status': 'error', 'error': str(e)}
+            return False
+    
+    def run_esios_collection(self):
+        """Ejecutar recopilación de datos de ESIOS (Red Eléctrica de España)"""
+        if not ESIOS_AVAILABLE:
+            logger.warning("⏭️  Colector de datos ESIOS no disponible")
+            return False
+            
+        try:
+            logger.info("=" * 60)
+            logger.info("⚡ INICIANDO RECOPILACIÓN DE DATOS DE ESIOS")
+            logger.info("=" * 60)
+            
+            # Obtener API key de ESIOS
+            try:
+                api_key = get_api_key("ESIOS")
+            except ValueError as e:
+                logger.error(f"❌ Error de configuración ESIOS: {e}")
+                logger.error("   Por favor, configura ESIOS_API_KEY como variable de entorno")
+                self.results['esios'] = {'status': 'failed', 'reason': 'API key not configured'}
+                return False
+            
+            collector = ESIOSDataCollector(api_key)
+            
+            # Recopilar todos los datos de ESIOS
+            collector.collect_all_data()
+            
+            # Verificar que se generaron los archivos
+            # DATA_ESIOS ya está disponible porque src está en el path
+            from config.paths import DATA_ESIOS
+            files_generated = []
+            expected_files = [
+                'demand_data.csv',
+                'price_data.csv',
+                'generation_data.csv'
+            ]
+            
+            for filename in expected_files:
+                filepath = DATA_ESIOS / filename
+                if filepath.exists():
+                    files_generated.append(f"esios/{filename}")
+                    size_kb = filepath.stat().st_size / 1024
+                    logger.info(f"✅ {filename} ({size_kb:.2f} KB)")
+                else:
+                    logger.warning(f"⚠️ {filename} no se generó")
+            
+            if files_generated:
+                self.results['esios'] = {
+                    'status': 'success',
+                    'files': files_generated
+                }
+                return True
+            else:
+                logger.error("❌ No se generaron archivos de ESIOS")
+                self.results['esios'] = {'status': 'failed', 'reason': 'No files generated'}
+                return False
+                
+        except Exception as e:
+            logger.error(f"❌ Error en recopilación de datos ESIOS: {str(e)}")
+            logger.debug(traceback.format_exc())
+            self.results['esios'] = {'status': 'error', 'error': str(e)}
+            return False
+    
     def run_all(self, skip_integration=False):
         """
         Ejecutar todos los colectores de datos
@@ -325,27 +281,17 @@ class DataCollectionRunner:
         success_count = 0
         total_count = 0
         
-        # 1. Calidad del aire
+        # 1. Datos del INE (Instituto Nacional de Estadística)
         total_count += 1
-        if self.run_air_quality_collection():
+        if self.run_ine_collection():
             success_count += 1
         
-        # 2. Movilidad
+        # 2. Datos de ESIOS (Red Eléctrica de España)
         total_count += 1
-        if self.run_mobility_collection():
+        if self.run_esios_collection():
             success_count += 1
         
-        # 3. Datos meteorológicos
-        total_count += 1
-        if self.run_weather_collection():
-            success_count += 1
-        
-        # 4. Precios de electricidad
-        total_count += 1
-        if self.run_electricity_prices_collection():
-            success_count += 1
-        
-        # 5. Integración de datos (opcional, puede ser redundante)
+        # 3. Integración de datos (weather, air_quality, mobility, electricity_prices)
         if not skip_integration:
             total_count += 1
             if self.run_data_integration():
@@ -396,8 +342,8 @@ def main():
     parser.add_argument(
         '--only',
         nargs='+',
-        choices=['air_quality', 'mobility', 'weather', 'electricity_prices', 'data_integration'],
-        help='Ejecutar solo los colectores especificados'
+        choices=['ine', 'esios', 'data_integration'],
+        help='Ejecutar solo los colectores especificados (ine, esios, data_integration)'
     )
     
     args = parser.parse_args()
