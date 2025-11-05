@@ -1,0 +1,8 @@
+indicator_id,name,unit,datetime,value,geo_id,geo_name,geo_agg
+9,Generación programada PBF Ciclo combinado,,2025-11-04 17:00:00+01:00,196.2,8741,Península,
+9,Generación programada PBF Ciclo combinado,,2025-11-04 18:00:00+01:00,264.4,8741,Península,
+9,Generación programada PBF Ciclo combinado,,2025-11-04 19:00:00+01:00,265.6,8741,Península,
+9,Generación programada PBF Ciclo combinado,,2025-11-04 20:00:00+01:00,266.8,8741,Península,
+9,Generación programada PBF Ciclo combinado,,2025-11-04 21:00:00+01:00,268.8,8741,Península,
+9,Generación programada PBF Ciclo combinado,,2025-11-04 22:00:00+01:00,270.0,8741,Península,
+9,Generación programada PBF Ciclo combinado,,2025-11-04 23:00:00+01:00,202.5,8741,Península,

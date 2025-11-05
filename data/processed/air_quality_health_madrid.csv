@@ -1,0 +1,22 @@
+distrito,dias_peligrosos,porcentaje_dias_peligrosos,exposicion_NO2_promedio,exposicion_PM2.5_promedio,exposicion_O3_promedio,nivel_riesgo
+Centro,19,5.2,42.47,16.03,65.78,Bajo
+Arganzuela,15,4.1,41.38,15.6,67.68,Bajo
+Retiro,7,1.9,36.68,14.05,67.65,Bajo
+Salamanca,12,3.3,40.49,15.4,66.2,Bajo
+Chamartín,4,1.1,36.85,13.87,65.55,Bajo
+Tetuán,7,1.9,38.67,14.58,66.29,Bajo
+Chamberí,8,2.2,38.76,14.94,67.0,Bajo
+Fuencarral-El Pardo,2,0.5,32.94,12.65,67.78,Bajo
+Moncloa-Aravaca,1,0.3,34.54,12.99,66.53,Bajo
+Latina,4,1.1,37.17,14.18,67.59,Bajo
+Carabanchel,6,1.6,38.97,14.78,66.22,Bajo
+Usera,21,5.8,40.25,15.39,67.27,Bajo
+Puente de Vallecas,23,6.3,42.21,16.06,65.95,Bajo
+Moratalaz,4,1.1,36.67,13.72,67.43,Bajo
+Ciudad Lineal,5,1.4,36.75,14.02,67.84,Bajo
+Hortaleza,1,0.3,34.5,13.22,68.48,Bajo
+Villaverde,15,4.1,41.01,15.4,65.69,Bajo
+Villa de Vallecas,13,3.6,40.71,15.32,65.2,Bajo
+Vicálvaro,7,1.9,36.88,13.87,66.78,Bajo
+San Blas-Canillejas,5,1.4,37.12,13.95,66.1,Bajo
+Barajas,2,0.5,32.95,12.49,67.41,Bajo

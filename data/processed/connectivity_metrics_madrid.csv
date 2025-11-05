@@ -1,0 +1,22 @@
+distrito,metro_stations,bus_lines,cercanias_stations,total_stations,connectivity_score,connectivity_level,accessibility_score
+Centro,5,157,2,164,49.7,Excelente,0.95
+Arganzuela,4,116,2,122,37.0,Excelente,0.9
+Retiro,5,144,1,150,45.5,Excelente,0.85
+Salamanca,5,144,1,150,45.5,Excelente,0.9
+Chamartín,4,168,2,174,52.6,Excelente,0.95
+Tetuán,4,168,1,173,52.3,Excelente,0.85
+Chamberí,5,169,1,175,53.0,Excelente,0.9
+Fuencarral-El Pardo,4,138,1,143,43.3,Excelente,0.7
+Moncloa-Aravaca,4,150,1,155,46.9,Excelente,0.8
+Latina,4,138,1,143,43.3,Excelente,0.75
+Carabanchel,4,138,1,143,43.3,Excelente,0.7
+Usera,4,137,1,142,43.0,Excelente,0.65
+Puente de Vallecas,4,137,1,142,43.0,Excelente,0.6
+Moratalaz,4,137,1,142,43.0,Excelente,0.65
+Ciudad Lineal,4,137,1,142,43.0,Excelente,0.7
+Hortaleza,4,137,1,142,43.0,Excelente,0.7
+Villaverde,3,137,1,141,42.6,Excelente,0.6
+Villa de Vallecas,3,137,1,141,42.6,Excelente,0.55
+Vicálvaro,3,137,1,141,42.6,Excelente,0.6
+San Blas-Canillejas,4,137,1,142,43.0,Excelente,0.65
+Barajas,3,137,1,141,42.6,Excelente,0.7

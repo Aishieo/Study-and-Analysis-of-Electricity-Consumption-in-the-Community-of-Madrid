@@ -1,0 +1,629 @@
+{
+  "1": {
+    "indicator_id": 1,
+    "name": "Generación programada PBF Hidráulica UGH",
+    "unit": "",
+    "type": "",
+    "description": "",
+    "values": [
+      {
+        "value": 1027.3,
+        "datetime": "2025-11-01T00:00:00.000+01:00",
+        "datetime_utc": "2025-10-31T23:00:00Z",
+        "tz_time": "2025-10-31T23:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 897.0,
+        "datetime": "2025-11-01T01:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T00:00:00Z",
+        "tz_time": "2025-11-01T00:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 703.1,
+        "datetime": "2025-11-01T02:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T01:00:00Z",
+        "tz_time": "2025-11-01T01:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 671.8,
+        "datetime": "2025-11-01T03:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T02:00:00Z",
+        "tz_time": "2025-11-01T02:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 677.6,
+        "datetime": "2025-11-01T04:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T03:00:00Z",
+        "tz_time": "2025-11-01T03:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 754.6,
+        "datetime": "2025-11-01T05:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T04:00:00Z",
+        "tz_time": "2025-11-01T04:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 1102.7,
+        "datetime": "2025-11-01T06:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T05:00:00Z",
+        "tz_time": "2025-11-01T05:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 1166.9,
+        "datetime": "2025-11-01T07:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T06:00:00Z",
+        "tz_time": "2025-11-01T06:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 978.3,
+        "datetime": "2025-11-01T08:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T07:00:00Z",
+        "tz_time": "2025-11-01T07:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 680.8,
+        "datetime": "2025-11-01T09:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T08:00:00Z",
+        "tz_time": "2025-11-01T08:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 987.7,
+        "datetime": "2025-11-01T10:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T09:00:00Z",
+        "tz_time": "2025-11-01T09:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 1186.9,
+        "datetime": "2025-11-01T11:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T10:00:00Z",
+        "tz_time": "2025-11-01T10:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 1187.2,
+        "datetime": "2025-11-01T12:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T11:00:00Z",
+        "tz_time": "2025-11-01T11:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 1188.3,
+        "datetime": "2025-11-01T13:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T12:00:00Z",
+        "tz_time": "2025-11-01T12:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 1210.8,
+        "datetime": "2025-11-01T14:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T13:00:00Z",
+        "tz_time": "2025-11-01T13:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 1211.0,
+        "datetime": "2025-11-01T15:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T14:00:00Z",
+        "tz_time": "2025-11-01T14:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 753.8,
+        "datetime": "2025-11-01T16:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T15:00:00Z",
+        "tz_time": "2025-11-01T15:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 2044.0,
+        "datetime": "2025-11-01T17:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T16:00:00Z",
+        "tz_time": "2025-11-01T16:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 3104.0,
+        "datetime": "2025-11-01T18:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T17:00:00Z",
+        "tz_time": "2025-11-01T17:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 3630.8,
+        "datetime": "2025-11-01T19:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T18:00:00Z",
+        "tz_time": "2025-11-01T18:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 3781.0,
+        "datetime": "2025-11-01T20:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T19:00:00Z",
+        "tz_time": "2025-11-01T19:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 3614.7,
+        "datetime": "2025-11-01T21:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T20:00:00Z",
+        "tz_time": "2025-11-01T20:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 3101.4,
+        "datetime": "2025-11-01T22:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T21:00:00Z",
+        "tz_time": "2025-11-01T21:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 2423.7,
+        "datetime": "2025-11-01T23:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T22:00:00Z",
+        "tz_time": "2025-11-01T22:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      }
+    ]
+  },
+  "4": {
+    "indicator_id": 4,
+    "name": "Generación programada PBF Nuclear",
+    "unit": "",
+    "type": "",
+    "description": "",
+    "values": [
+      {
+        "value": 4945.9,
+        "datetime": "2025-11-01T00:00:00.000+01:00",
+        "datetime_utc": "2025-10-31T23:00:00Z",
+        "tz_time": "2025-10-31T23:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4931.6,
+        "datetime": "2025-11-01T01:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T00:00:00Z",
+        "tz_time": "2025-11-01T00:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4931.8,
+        "datetime": "2025-11-01T02:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T01:00:00Z",
+        "tz_time": "2025-11-01T01:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4931.8,
+        "datetime": "2025-11-01T03:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T02:00:00Z",
+        "tz_time": "2025-11-01T02:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4933.8,
+        "datetime": "2025-11-01T04:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T03:00:00Z",
+        "tz_time": "2025-11-01T03:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4934.6,
+        "datetime": "2025-11-01T05:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T04:00:00Z",
+        "tz_time": "2025-11-01T04:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4934.8,
+        "datetime": "2025-11-01T06:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T05:00:00Z",
+        "tz_time": "2025-11-01T05:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4934.5,
+        "datetime": "2025-11-01T07:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T06:00:00Z",
+        "tz_time": "2025-11-01T06:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4936.8,
+        "datetime": "2025-11-01T08:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T07:00:00Z",
+        "tz_time": "2025-11-01T07:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4935.8,
+        "datetime": "2025-11-01T09:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T08:00:00Z",
+        "tz_time": "2025-11-01T08:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4933.8,
+        "datetime": "2025-11-01T10:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T09:00:00Z",
+        "tz_time": "2025-11-01T09:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4933.8,
+        "datetime": "2025-11-01T11:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T10:00:00Z",
+        "tz_time": "2025-11-01T10:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4931.8,
+        "datetime": "2025-11-01T12:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T11:00:00Z",
+        "tz_time": "2025-11-01T11:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4926.3,
+        "datetime": "2025-11-01T13:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T12:00:00Z",
+        "tz_time": "2025-11-01T12:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4922.8,
+        "datetime": "2025-11-01T14:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T13:00:00Z",
+        "tz_time": "2025-11-01T13:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4922.8,
+        "datetime": "2025-11-01T15:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T14:00:00Z",
+        "tz_time": "2025-11-01T14:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4920.9,
+        "datetime": "2025-11-01T16:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T15:00:00Z",
+        "tz_time": "2025-11-01T15:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4920.6,
+        "datetime": "2025-11-01T17:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T16:00:00Z",
+        "tz_time": "2025-11-01T16:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4926.5,
+        "datetime": "2025-11-01T18:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T17:00:00Z",
+        "tz_time": "2025-11-01T17:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4923.6,
+        "datetime": "2025-11-01T19:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T18:00:00Z",
+        "tz_time": "2025-11-01T18:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4928.0,
+        "datetime": "2025-11-01T20:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T19:00:00Z",
+        "tz_time": "2025-11-01T19:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4930.0,
+        "datetime": "2025-11-01T21:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T20:00:00Z",
+        "tz_time": "2025-11-01T20:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4937.6,
+        "datetime": "2025-11-01T22:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T21:00:00Z",
+        "tz_time": "2025-11-01T21:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 4938.3,
+        "datetime": "2025-11-01T23:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T22:00:00Z",
+        "tz_time": "2025-11-01T22:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      }
+    ]
+  },
+  "9": {
+    "indicator_id": 9,
+    "name": "Generación programada PBF Ciclo combinado",
+    "unit": "",
+    "type": "",
+    "description": "",
+    "values": []
+  },
+  "10": {
+    "indicator_id": 10,
+    "name": "Generación programada PBF Fuel",
+    "unit": "",
+    "type": "",
+    "description": "",
+    "values": []
+  },
+  "11": {
+    "indicator_id": 11,
+    "name": "Generación programada PBF Gas Natural - Turbina de vapor",
+    "unit": "",
+    "type": "",
+    "description": "",
+    "values": []
+  },
+  "12": {
+    "indicator_id": 12,
+    "name": "Generación programada PBF Eólica terrestre",
+    "unit": "",
+    "type": "",
+    "description": "",
+    "values": [
+      {
+        "value": 13637.9,
+        "datetime": "2025-11-01T00:00:00.000+01:00",
+        "datetime_utc": "2025-10-31T23:00:00Z",
+        "tz_time": "2025-10-31T23:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 13324.0,
+        "datetime": "2025-11-01T01:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T00:00:00Z",
+        "tz_time": "2025-11-01T00:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 12943.7,
+        "datetime": "2025-11-01T02:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T01:00:00Z",
+        "tz_time": "2025-11-01T01:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 12578.4,
+        "datetime": "2025-11-01T03:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T02:00:00Z",
+        "tz_time": "2025-11-01T02:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 12335.9,
+        "datetime": "2025-11-01T04:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T03:00:00Z",
+        "tz_time": "2025-11-01T03:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 12064.4,
+        "datetime": "2025-11-01T05:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T04:00:00Z",
+        "tz_time": "2025-11-01T04:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 11699.9,
+        "datetime": "2025-11-01T06:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T05:00:00Z",
+        "tz_time": "2025-11-01T05:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 11146.5,
+        "datetime": "2025-11-01T07:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T06:00:00Z",
+        "tz_time": "2025-11-01T06:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 10578.9,
+        "datetime": "2025-11-01T08:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T07:00:00Z",
+        "tz_time": "2025-11-01T07:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 9932.9,
+        "datetime": "2025-11-01T09:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T08:00:00Z",
+        "tz_time": "2025-11-01T08:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 9484.7,
+        "datetime": "2025-11-01T10:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T09:00:00Z",
+        "tz_time": "2025-11-01T09:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 9446.3,
+        "datetime": "2025-11-01T11:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T10:00:00Z",
+        "tz_time": "2025-11-01T10:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 9401.5,
+        "datetime": "2025-11-01T12:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T11:00:00Z",
+        "tz_time": "2025-11-01T11:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 9377.1,
+        "datetime": "2025-11-01T13:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T12:00:00Z",
+        "tz_time": "2025-11-01T12:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 9342.3,
+        "datetime": "2025-11-01T14:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T13:00:00Z",
+        "tz_time": "2025-11-01T13:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 9025.5,
+        "datetime": "2025-11-01T15:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T14:00:00Z",
+        "tz_time": "2025-11-01T14:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 8608.6,
+        "datetime": "2025-11-01T16:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T15:00:00Z",
+        "tz_time": "2025-11-01T15:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 8574.7,
+        "datetime": "2025-11-01T17:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T16:00:00Z",
+        "tz_time": "2025-11-01T16:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 8823.4,
+        "datetime": "2025-11-01T18:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T17:00:00Z",
+        "tz_time": "2025-11-01T17:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 9309.8,
+        "datetime": "2025-11-01T19:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T18:00:00Z",
+        "tz_time": "2025-11-01T18:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 9632.5,
+        "datetime": "2025-11-01T20:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T19:00:00Z",
+        "tz_time": "2025-11-01T19:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 9792.4,
+        "datetime": "2025-11-01T21:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T20:00:00Z",
+        "tz_time": "2025-11-01T20:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 9913.1,
+        "datetime": "2025-11-01T22:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T21:00:00Z",
+        "tz_time": "2025-11-01T21:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      },
+      {
+        "value": 10184.4,
+        "datetime": "2025-11-01T23:00:00.000+01:00",
+        "datetime_utc": "2025-11-01T22:00:00Z",
+        "tz_time": "2025-11-01T22:00:00.000Z",
+        "geo_id": 8741,
+        "geo_name": "Península"
+      }
+    ]
+  }
+}
