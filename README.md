@@ -1,0 +1,2 @@
+# Study-and-Analysis-of-Electricity-Consumption-in-the-Community-of-Madrid
+This study examines electricity consumption patterns in the Community of Madrid, analyzing their correlation with key socioeconomic factors such as income, population density, and industrial activity. It also includes a projection of future trends to better understand potential changes in energy demand and inform sustainable policy decisions.
