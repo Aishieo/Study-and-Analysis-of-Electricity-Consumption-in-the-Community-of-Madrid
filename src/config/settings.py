@@ -27,19 +27,6 @@ def get_api_key(service: str, default: Optional[str] = None) -> str:
     env_var = f"{service}_API_KEY"
     api_key = os.getenv(env_var, default)
     
-    # Temporal: Para mantener compatibilidad durante transición
-    # TODO: Eliminar este fallback después de migración completa
-    if api_key is None and service == "ESIOS":
-        # Fallback temporal - AVISO: Esto debe eliminarse
-        legacy_key = "79ebcce6833ab7973be74132360881e1c856b1823f5047225cb06fe056bc4a7b"
-        import warnings
-        warnings.warn(
-            f"⚠️ {env_var} no está configurada. Usando key temporal. "
-            f"Por favor, configura {env_var} como variable de entorno.",
-            UserWarning
-        )
-        return legacy_key
-    
     if api_key is None:
         raise ValueError(
             f"{env_var} no está configurada. "
